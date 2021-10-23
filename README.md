@@ -1,0 +1,2 @@
+# Notally
+The creative app use variety of android technologies and frameworks, demonstrated by both functional, formative, and inspirational design that help you have a shift in attitudes in remembering all things traditionally. it's always easier to get your ideas across if you can visualize them by taking notes, going with colors, sharing notes to collaborators, or simply allowing your ideas to run wild. 
