@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="navLabel"
+            type="com.example.notally.repos.model.NavModel.NavLabelItem" />
+
+        <variable
+            name="navListener"
+            type="com.example.notally.adapter.NavigationAdapter.NavigationAdapterListener" />
+    </data>
+
+    <TextView
+        android:id="@+id/nav_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_56"
+        android:drawablePadding="@dimen/dp_32"
+        android:ellipsize="end"
+        android:gravity="center_vertical|start"
+        android:lines="1"
+        android:onClick="@{() -> navListener.onNavLabelClicked(navLabel)}"
+        android:paddingLeft="@dimen/dp_32"
+        android:paddingRight="@dimen/dp_32"
+        android:text="@{navLabel.name}"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        app:drawableStartCompat="@drawable/ic_baseline_label_24"
+        app:drawableTint="?attr/colorOnPrimary"
+        tools:text="Design" />
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="navDivider"
+            type="com.example.notally.repos.model.NavModel.NavDivider" />
+    </data>
+
+    <TextView
+        android:id="@+id/dividerSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_32"
+        android:layout_marginVertical="@dimen/dp_16"
+        android:drawablePadding="@dimen/dp_32"
+        android:text="@{navDivider.title}"
+        android:textAppearance="?attr/textAppearanceOverline"
+        android:textColor="?attr/colorOnSecondary"
+        app:drawableTopCompat="@drawable/nav_divider_top" />
+
+</layout>
