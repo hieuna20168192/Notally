@@ -6,9 +6,8 @@ import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding>:
     AppCompatActivity(), IBaseScreen {
 
