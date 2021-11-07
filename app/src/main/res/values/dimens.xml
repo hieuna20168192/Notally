@@ -8,4 +8,9 @@
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_56">56dp</dimen>
     <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_480">480dp</dimen>
+    <dimen name="dp_188">188dp</dimen>
+    <dimen name="dp_247">247dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="dp_2">2dp</dimen>
 </resources>
