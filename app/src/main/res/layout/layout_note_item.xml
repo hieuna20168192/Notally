@@ -5,27 +5,46 @@
 
     <data>
 
+        <variable
+            name="listener"
+            type="com.example.notally.adapter.NoteAdapter.NoteListener" />
+
+        <variable
+            name="note"
+            type="com.example.notally.repos.model.Note" />
+
+        <import type="android.view.View" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_4"
+        android:layout_marginVertical="@dimen/dp_4"
         android:elevation="@dimen/dp_8"
-        app:cardCornerRadius="@dimen/dp_20">
+        app:cardBackgroundColor="@color/secondaryColor"
+        app:cardCornerRadius="@dimen/dp_8"
+        app:cardPreventCornerOverlap="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primaryColor">
+            android:background="@color/secondaryColor"
+            android:onClick="@{() -> listener.onNoteClick(note)}">
 
             <TextView
                 android:id="@+id/textViewNoteTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/dp_32"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingTop="@dimen/dp_16"
                 android:paddingBottom="@dimen/dp_8"
-                android:singleLine="true"
+                android:text="@{note.title}"
                 android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toEndOf="@+id/guidelineStart"
                 app:layout_constraintTop_toTopOf="parent"
@@ -38,7 +57,9 @@
                 android:ellipsize="end"
                 android:maxLines="4"
                 android:paddingVertical="@dimen/dp_8"
-                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:text="@{note.content}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:visibility="@{note.bulletPoints.size() == 0 ? View.VISIBLE: View.GONE}"
                 app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
                 app:layout_constraintStart_toEndOf="@id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNoteTitle"
@@ -48,6 +69,7 @@
                 android:id="@+id/rclCheckList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_8"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"

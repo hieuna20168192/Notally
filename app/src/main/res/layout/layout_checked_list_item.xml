@@ -5,15 +5,19 @@
 
     <data>
 
+        <variable
+            name="bulletPoint"
+            type="com.example.notally.repos.model.BulletPoint" />
     </data>
 
     <CheckedTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:checked="@{bulletPoint.checked}"
         android:drawableStart="@drawable/ic_baseline_check_24"
-        android:paddingVertical="@dimen/dp_8"
         android:singleLine="true"
-        android:textAppearance="?attr/textAppearanceBody1"
+        android:text="@{bulletPoint.name}"
+        android:textAppearance="?attr/textAppearanceBody2"
         android:textColor="@color/color_navigation_drawer_menu_item"
         app:drawableTint="@color/color_navigation_drawer_menu_item"
         tools:checked="true"
